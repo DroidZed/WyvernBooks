@@ -19,19 +19,19 @@
             <Font name="Segoe Script" size="16.0" />
          </font>
       </Button>
-      <TextField layoutX="143.0" layoutY="250.0" promptText="username">
+      <TextField layoutX="143.0" layoutY="250.0" promptText="username" styleClass="placeholder" stylesheets="@application.css">
          <font>
             <Font name="Segoe Script" size="16.0" />
          </font>
       </TextField>
-      <PasswordField layoutX="143.0" layoutY="326.0" promptText="password">
+      <PasswordField layoutX="143.0" layoutY="326.0" promptText="password" styleClass="placeholder" stylesheets="@application.css">
          <font>
             <Font name="Segoe Script" size="16.0" />
          </font>
       </PasswordField>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="150.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/login-200.png" />
+            <Image url="@../../img/login-200.png" />
          </image>
       </ImageView>
    </children>
