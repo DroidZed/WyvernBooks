@@ -19,7 +19,7 @@
             <Image url="@../../img/login-200.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btn_sign" layoutX="193.0" layoutY="405.0" onAction="#handleButtonAction" prefHeight="41.0" prefWidth="116.0" text="sign in" textAlignment="CENTER" textFill="#00ff09">
+      <JFXButton fx:id="btn_sign" layoutX="102.0" layoutY="403.0" onAction="#loginHandle" prefHeight="41.0" prefWidth="116.0" text="Sign In" textAlignment="CENTER" textFill="#00ff09">
          <font>
             <Font name="Segoe Script Bold" size="15.0" />
          </font>
@@ -34,5 +34,10 @@
             <Font name="Segoe Script" size="15.0" />
          </font>
       </JFXTextField>
+      <JFXButton fx:id="btn_reg" layoutX="285.0" layoutY="403.0" onAction="#registerHandle" prefHeight="41.0" prefWidth="116.0" text="Sign Up" textAlignment="CENTER" textFill="#00ff09">
+         <font>
+            <Font name="Segoe Script Bold" size="15.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

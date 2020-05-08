@@ -30,6 +30,9 @@ public class MainController {
 
     @FXML // fx:id="btn_sign"
     private Button btn_sign; // Value injected by FXMLLoader
+    
+    @FXML // fx:id="btn_sign"
+    private Button btn_reg; // Value injected by FXMLLoader
 
     @FXML // fx:id="usr"
     private TextField usr; // Value injected by FXMLLoader
@@ -38,7 +41,7 @@ public class MainController {
     private PasswordField pwd; // Value injected by FXMLLoader
 
     @FXML
-    void handleButtonAction(ActionEvent event) {
+    void loginHandle(ActionEvent event) throws Exception {
     	Window owner = btn_sign.getScene().getWindow();
 	    if(usr.getText().isEmpty() && pwd.getText().isEmpty()) {
 	        AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!", 
@@ -57,6 +60,16 @@ public class MainController {
     	}
 	    else {
 	    	try {
+	    	User u = new User(usr.getText(),pwd.getText());
+	    	
+	    	JSON_IO_Ops j = new JSON_IO_Ops("json_info/user.json"); 
+	    	
+	    	j.saveUserInfo(u);
+	    	
+	    	Stage s = (Stage) owner;
+	    	
+	    	s.close();
+
     		FXMLLoader fxmlloader = new FXMLLoader (getClass().getResource("booksMain.fxml"));
     		Parent root1 = (Parent) fxmlloader.load();
     		Stage stage = new Stage();
@@ -70,10 +83,15 @@ public class MainController {
 	    }
 
     }
+    @FXML
+    void registerHandle(ActionEvent event) {
+    	
+    }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
         assert btn_sign != null : "fx:id=\"btn_sign\" was not injected: check your FXML file 'Sample.fxml'.";
+        assert btn_reg != null : "fx:id=\"btn_reg\" was not injected: check your FXML file 'Sample.fxml'.";
         assert usr != null : "fx:id=\"usr\" was not injected: check your FXML file 'Sample.fxml'.";
         assert pwd != null : "fx:id=\"pwd\" was not injected: check your FXML file 'Sample.fxml'.";
 
