@@ -42,7 +42,7 @@
             <Pane fx:id="pane3" prefHeight="612.0" prefWidth="526.0" style="-fx-background-color: red;" />
             <Pane fx:id="pane4" prefHeight="150.0" prefWidth="526.0" style="-fx-background-color: yellow;" />
             <Pane fx:id="pane1" prefHeight="612.0" prefWidth="526.0" style="-fx-background-color: black;" />
-            <Pane fx:id="pane2" prefHeight="612.0" prefWidth="526.0" style="-fx-background-color: white;" />
+            <Pane id="usr_p" fx:id="pane2" prefHeight="612.0" prefWidth="526.0" stylesheets="@application.css" />
          </children>
       </StackPane>
    </children>

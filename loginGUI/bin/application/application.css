@@ -23,3 +23,7 @@
 .pBtn:hover{
 	-fx-background-radius: 0px, 0px, 2px, 0px;
 }
+
+#usr_p{
+	-fx-background-image: url('../../img/pane.png');
+}
