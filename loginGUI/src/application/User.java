@@ -1,8 +1,13 @@
 package application;
 
+import java.util.Iterator;
+
+//import java.io.File;
+
 public class User {
 
-	private String username, password;
+	private String username, password, pic;
+	private Iterator<String> favs;
 
 	public String getUsername() {
 		return username;
@@ -24,8 +29,25 @@ public class User {
 		username = password = "";
 	}
 	
-	public User(String u, String p) {
+	public User(String u, String p, String i) {
 		username = u ;
 		password = p;
+		pic = i;
+	}
+
+	public String getPic() {
+		return pic;
+	}
+
+	public void setPic(String pic) {
+		this.pic = pic;
+	}
+
+	public Iterator<String> getFavs() {
+		return favs;
+	}
+
+	public void setFavs(Iterator<String> favs) {
+		this.favs = favs;
 	}
 }

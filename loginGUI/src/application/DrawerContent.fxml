@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton accessibleText="home" layoutY="175.0" prefHeight="48.0" prefWidth="200.0" text="home" textFill="#430fd3">
+         <font>
+            <Font name="Segoe Script Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton accessibleText="browse" layoutY="225.0" prefHeight="48.0" prefWidth="200.0" text="browse" textFill="#430fd3">
+         <font>
+            <Font name="Segoe Script Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton accessibleText="about" layoutY="273.0" prefHeight="48.0" prefWidth="200.0" text="about" textFill="#430fd3">
+         <font>
+            <Font name="Segoe Script Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton accessibleText="news" layoutY="323.0" prefHeight="48.0" prefWidth="200.0" text="news" textFill="#430fd3">
+         <font>
+            <Font name="Segoe Script Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton accessibleText="exit" layoutY="373.0" prefHeight="48.0" prefWidth="200.0" text="exit" textFill="#430fd3">
+         <font>
+            <Font name="Segoe Script Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="145.0" fitWidth="200.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/bbb.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.nourUIController">
+   <children>
+      <StackPane layoutX="188.0" prefHeight="504.0" prefWidth="512.0">
+         <children>
+            <Pane fx:id="pane_2" prefHeight="501.0" prefWidth="438.0" style="-fx-background-color: yellow;" />
+            <Pane fx:id="pane_4" prefHeight="504.0" prefWidth="440.0" style="-fx-background-color: green;" />
+            <Pane fx:id="pane_3" prefHeight="501.0" prefWidth="439.0" style="-fx-background-color: blue;" />
+            <Pane fx:id="pane_1" prefHeight="504.0" prefWidth="472.0" style="-fx-background-color: red;" />
+         </children>
+      </StackPane>
+      <JFXHamburger fx:id="hamburger" layoutX="645.0" layoutY="24.0" />
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="190.0" layoutX="-10.0" layoutY="-5.0" prefHeight="504.0" prefWidth="214.0" />
+   </children>
+</AnchorPane>

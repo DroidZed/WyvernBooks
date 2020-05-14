@@ -3,27 +3,10 @@
 .placeholder{
 	-fx-text-fill:lime;
 }
-.pBtn{
-    -fx-border-color: transparent;
-    -fx-border-width: 0;
-    -fx-background-radius: 0;
-    -fx-background-color: transparent;
-    -fx-font-family:"Segoe Script";
-    -fx-font-size:16;
-    -fx-text-fill: white;
-   
-}
 
  
  .booksMain{
 -fx-background-image: url('../../img/slider.png');
     -fx-background-repeat: no-repeat;
-}
-
-.pBtn:hover{
-	-fx-background-radius: 0px, 0px, 2px, 0px;
-}
-
-#usr_p{
-	-fx-background-image: url('../../img/pane.png');
+    -fx-background-size : 181px 500px;
 }
