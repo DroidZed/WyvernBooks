@@ -1,25 +1,17 @@
 /**
- * 
+ * @author DroidZed
  */
 package application;
 
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Iterator;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-/**
- * @author ASUS
- *
- */
 public class JSON_IO_Ops {
 	
 	private static String fileName;
@@ -34,58 +26,40 @@ public class JSON_IO_Ops {
 	
 	@SuppressWarnings("unchecked")
 	public void saveUserInfo(User u) throws Exception {
-		
-	    JSONObject sampleObject = new JSONObject();
-	    /*
-	  	JSONArray hobbies = new JSONArray();
+		//belhy arj3lha hedhi 8odwa w salla7 waldiha....
+	    JSONObject userObj = new JSONObject();
+	    
+	    JSONObject finalObject  = new JSONObject();
 	  	
-	  	
-	    for(int i = 0; i < p.getHob().size(); i++){
-	    	hobbies.add(p.getHob().get(i));
+	    userObj.put("Password", u.getPassword());
+	    userObj.put("Username", u.getUsername());
+	    userObj.put("Picture", u.getPic());
+	    userObj.put("Favs",u.getFavs());
+	    
+	    int i = 0;
+
+	    File f = new File(fileName);
+	    
+	    	if (f.length() < 53) {
+	    		finalObject.put("User"+i,userObj);
+	    		 Files.write(Paths.get(fileName), finalObject.toJSONString().getBytes());
+	    	} 
+	   
+	    	else {
+	    		JSONObject old = readJSON();
+
+	    		finalObject.put("User"+i, old.get("User"+i));
+	    		i++;
+	    		finalObject.put("User"+i, userObj);
+
+	    		Files.write(Paths.get(fileName), finalObject.toJSONString().getBytes());
 	    	}
-	    */
-	    sampleObject.put("Password", u.getPassword());
-	    sampleObject.put("Username", u.getUsername());
-	    sampleObject.put("Picture", u.getPic());
-	    sampleObject.put("Favs",u.getFavs());
-	    Files.write(Paths.get(fileName), sampleObject.toJSONString().getBytes());
 	}
-	
-	
-	@SuppressWarnings("unchecked")
-	public void printJSON() {
-		JSONParser parser = new JSONParser();
 
-        try (Reader reader = new FileReader(fileName)) {
-        	
-            JSONObject jsonObject = (JSONObject) parser.parse(reader);
-            
-            String name = (String) jsonObject.get("name");
-            int age = (int) jsonObject.get("age");
-            JSONArray msg = (JSONArray) jsonObject.get("Hobbies");
-            
-            Iterator<String> iterator = msg.iterator();
-            
-            System.out.println(jsonObject);
-            System.out.println(name);
-            System.out.println(age);
-            
-            while (iterator.hasNext()) {
-                System.out.println(iterator.next());
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-	}
-	
 	public JSONObject readJSON() throws Exception {
 		JSONParser parser = new JSONParser();
 		JSONObject jsonObject = new JSONObject();
         try (Reader reader = new FileReader(fileName)) {
-        	
              jsonObject = (JSONObject) parser.parse(reader);
         }
         catch(Exception e) {
@@ -93,7 +67,6 @@ public class JSON_IO_Ops {
         }
         return jsonObject;
 	}
-
 	public Boolean validateUser(Boolean sUp,String ...vals) throws Exception{
 			
 			if(new File(fileName) != null) {
@@ -105,7 +78,6 @@ public class JSON_IO_Ops {
 					if(usr == vals[0])
 						return false;
 				}
-				
 				else {
 					String pwd = (String) j.get("Password");
 					if(pwd != vals[0] && pwd == "")

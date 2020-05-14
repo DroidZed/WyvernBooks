@@ -7,6 +7,7 @@ package application;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
@@ -103,22 +104,12 @@ public class MainController {
 	    else {
 	    	try {
 	    	User u = new User(usr.getText(),pwd.getText(), "img/pp.png");
+	    	
 	    	JSON_IO_Ops j = new JSON_IO_Ops("json_info/user.json");
 	    	
 	    	if(j.validateUser(false,u.getPassword()) == true) {
 	    	
-	    	Window owner = btn_enter.getScene().getWindow();
-	    	
-	    	Stage s = (Stage) owner;
-	    	s.close();
-
-    		FXMLLoader fxmlloader = new FXMLLoader (getClass().getResource("nourUI2.fxml"));
-    		Parent root1 = (Parent) fxmlloader.load();
-    		Stage stage = new Stage();
-    		stage.setScene(new Scene(root1));
-    		stage.getIcons().add(new Image("icon.png"));
-    		stage.setResizable(false);
-    		stage.show();
+	    		switchTo();
 	    	}
 	    	else
 	    		dialogToShow(JFXDialog.DialogTransition.CENTER,"Oh oh...wrong password !","ATTENTION !",stackPane1);
@@ -128,7 +119,21 @@ public class MainController {
 	    	}
     }
 }
-    @FXML // This method is called by the FXMLLoader when initialization is complete
+    private void switchTo() throws IOException {
+    	Window owner = btn_enter.getScene().getWindow();
+    	Stage s = (Stage) owner;
+    	s.close();
+    	FXMLLoader fxmlloader = new FXMLLoader (getClass().getResource("nourUI2.fxml"));
+		Parent root1 = (Parent) fxmlloader.load();
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root1));
+		stage.getIcons().add(new Image("icon.png"));
+		stage.setResizable(false);
+		stage.show();
+		
+	}
+
+	@FXML // This method is called by the FXMLLoader when initialization is complete
     void registerHandle(ActionEvent event) throws Exception{
 
     	try {
@@ -146,30 +151,17 @@ public class MainController {
 	    else {
 	    	//saving the user info to json
 	    	User u = new User(reg_usr.getText(),reg_pwd.getText(),"img/pp.png");
+	    	
 	    	JSON_IO_Ops j = new JSON_IO_Ops("json_info/user.json");
 
 	      	if(j.validateUser(true,u.getUsername()) == true) {
 	      	j.saveUserInfo(u);
-	      	
 	      	//saving the pic
 	      	Image im = image.getImage();
 	      	File output = new File("img/pp.png");
 	      	BufferedImage bImage = SwingFXUtils.fromFXImage(im, null);
 	      	ImageIO.write(bImage, "png", output);
-	      	
-	    	//closing the interface
-	      	Window owner = btn_reg_enter.getScene().getWindow();
-	    	Stage s = (Stage) owner;
-	    	s.close();
-	    	
-	      	//switching to the other one
-    		FXMLLoader fxmlloader = new FXMLLoader (getClass().getResource("nourUI2.fxml"));
-    		Parent root1 = (Parent) fxmlloader.load();
-    		Stage stage = new Stage();
-    		stage.setScene(new Scene(root1));
-    		stage.getIcons().add(new Image("icon.png"));
-    		stage.setResizable(false);
-    		stage.show();
+	      	switchTo();	      	
 	      	}
 	    	else {
 	    		dialogToShow(JFXDialog.DialogTransition.CENTER,"You now there can't be two of you right ?","ATTENTION !",stackPane1);

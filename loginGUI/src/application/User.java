@@ -1,13 +1,13 @@
 package application;
 
-import java.util.Iterator;
+import java.util.ArrayList;
 
 //import java.io.File;
 
 public class User {
 
 	private String username, password, pic;
-	private Iterator<String> favs;
+	private ArrayList<String> favs;
 
 	public String getUsername() {
 		return username;
@@ -43,11 +43,11 @@ public class User {
 		this.pic = pic;
 	}
 
-	public Iterator<String> getFavs() {
+	public ArrayList<String> getFavs() {
 		return favs;
 	}
 
-	public void setFavs(Iterator<String> favs) {
+	public void setFavs(ArrayList<String> favs) {
 		this.favs = favs;
 	}
 }
