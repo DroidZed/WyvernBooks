@@ -1,22 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXDrawer?>
 <?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.nourUIController">
+<AnchorPane fx:id="anchorPane" prefHeight="520.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.nourUIController">
    <children>
-      <StackPane layoutX="188.0" prefHeight="504.0" prefWidth="512.0">
+      <StackPane prefHeight="520.0" prefWidth="700.0">
          <children>
-            <Pane fx:id="pane_2" prefHeight="501.0" prefWidth="438.0" style="-fx-background-color: yellow;" />
-            <Pane fx:id="pane_4" prefHeight="504.0" prefWidth="440.0" style="-fx-background-color: green;" />
-            <Pane fx:id="pane_3" prefHeight="501.0" prefWidth="439.0" style="-fx-background-color: blue;" />
-            <Pane fx:id="pane_1" prefHeight="504.0" prefWidth="472.0" style="-fx-background-color: red;" />
+            <Pane fx:id="pane_4" prefHeight="520.0" prefWidth="512.0" style="-fx-background-color: white;">
+               <children>
+                  <ScrollPane fx:id="sp" hbarPolicy="NEVER" prefHeight="520.0" prefWidth="700.0">
+                     <content>
+                        <AnchorPane fx:id="scrl" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="518.0" prefWidth="700.0">
+                           <children>
+                              <StackPane fx:id="stp" layoutX="173.0" layoutY="40.0" prefHeight="109.0" prefWidth="355.0">
+                                 <children>
+                                    <JFXButton fx:id="pic" onAction="#addPics" prefHeight="88.0" prefWidth="355.0" text="Click To Add Pics">
+                                       <font>
+                                          <Font name="Segoe Script" size="31.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </StackPane>
+                              <FlowPane fx:id="fp" layoutY="128.0" prefHeight="540.0" prefWidth="700.0" vgap="10.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children></Pane>
+            <Pane fx:id="pane_3" prefHeight="520.0" prefWidth="512.0" style="-fx-background-color: white;">
+               <children>
+                  <TextFlow fx:id="txtf" layoutX="138.0" layoutY="104.0" lineSpacing="5.0" prefHeight="416.0" prefWidth="425.0" />
+               </children></Pane>
+            <Pane fx:id="pane_2" prefHeight="504.0" prefWidth="472.0" style="-fx-background-color: #fff;">
+               <children>
+                  <HBox layoutX="155.0" layoutY="87.0" prefHeight="62.0" prefWidth="391.0" style="-fx-background-color: #fff;">
+                     <opaqueInsets>
+                        <Insets left="10.0" top="5.0" />
+                     </opaqueInsets>
+                     <children>
+                        <JFXTextField fx:id="sfield" focusColor="#03e84f" prefHeight="35.0" prefWidth="319.0" promptText="search for a book" unFocusColor="#0de835">
+                           <HBox.margin>
+                              <Insets top="11.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Segoe Script Bold" size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="srh" onAction="#fSearch" rotate="180.0" style="-fx-background-color: transparent;" text="🔎" textFill="#03f237">
+                           <font>
+                              <Font name="Segoe Script Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="12.0" />
+                           </HBox.margin>
+                           <rotationAxis>
+                              <Point3D y="1.0" />
+                           </rotationAxis>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <TextFlow fx:id="tfo" layoutX="145.0" layoutY="149.0" lineSpacing="3.0" prefHeight="371.0" prefWidth="357.0" textAlignment="CENTER" />
+               </children>
+            </Pane>
+            <Pane fx:id="pane_1" prefHeight="504.0" prefWidth="472.0" style="-fx-background-color: #fff;" stylesheets="@../../../../Users/ASUS/eclipse-workspace/dragon5/src/application/application.css">
+               <children>
+                  <JFXComboBox fx:id="cb" focusColor="#1de40b" labelFloat="true" layoutX="385.0" layoutY="170.0" prefHeight="34.0" prefWidth="184.0" promptText="book type" unFocusColor="#07e41d" />
+                  <JFXButton fx:id="bDone" layoutX="275.0" layoutY="395.0" onAction="#sendData" prefHeight="51.0" prefWidth="149.0" text="Add" textFill="#14ee11">
+                     <font>
+                        <Font name="Segoe Script Bold" size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="bname" focusColor="#14eb04" labelFloat="true" layoutX="118.0" layoutY="74.0" prefHeight="34.0" prefWidth="184.0" promptText="book name" style="-fx-background-color: transparent;" unFocusColor="#08f210">
+                     <font>
+                        <Font name="Segoe Script Bold" size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="aname" focusColor="#04ee52" labelFloat="true" layoutX="385.0" layoutY="74.0" prefHeight="34.0" prefWidth="184.0" promptText="author name" unFocusColor="#09f859">
+                     <font>
+                        <Font name="Segoe Script Bold" size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <StackPane layoutX="125.0" layoutY="170.0" prefHeight="51.0" prefWidth="171.0">
+                     <children>
+                        <JFXDatePicker fx:id="dpk" defaultColor="#08eb50" prefHeight="34.0" prefWidth="171.0" promptText="Addition date" showWeekNumbers="true" />
+                     </children>
+                  </StackPane>
+                  <JFXSlider fx:id="sldr" layoutX="378.0" layoutY="306.0" max="2000.0" min="1.0" value="1.0" />
+                  <Label layoutX="189.0" layoutY="298.0" prefHeight="29.0" prefWidth="140.0" text="Nb. Of Pages :" textFill="#0aee56">
+                     <font>
+                        <Font name="Segoe Script Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <Text layoutX="175.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" wrappingWidth="350.6708984375">
+                     <font>
+                        <Font name="Baka" size="100.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="323.0" fitWidth="248.0" layoutX="214.0" layoutY="144.0" preserveRatio="true">
+                     <image>
+                        <Image url="@../binome.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
          </children>
       </StackPane>
       <JFXHamburger fx:id="hamburger" layoutX="645.0" layoutY="24.0" />
-      <JFXDrawer fx:id="drawer" defaultDrawerSize="190.0" layoutX="-10.0" layoutY="-5.0" prefHeight="504.0" prefWidth="214.0" />
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="190.0" layoutX="-10.0" layoutY="-5.0" prefHeight="520.0" prefWidth="214.0" />
    </children>
 </AnchorPane>

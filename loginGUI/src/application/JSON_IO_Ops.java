@@ -49,8 +49,7 @@ public class JSON_IO_Ops {
 	    		JSONObject old = readJSON();
 
 	    		finalObject.put("User"+i, old.get("User"+i));
-	    		i++;
-	    		finalObject.put("User"+i, userObj);
+	    		finalObject.put("User"+i++, userObj);
 
 	    		Files.write(Paths.get(fileName), finalObject.toJSONString().getBytes());
 	    	}

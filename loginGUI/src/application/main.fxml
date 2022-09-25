@@ -32,12 +32,12 @@
                <children>
                   <ImageView fitHeight="33.0" fitWidth="34.0" layoutX="76.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" rotate="-45.0">
                      <image>
-                        <Image url="@../../img/key.png" />
+                        <Image url="@../key.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="173.0" fitWidth="261.0" layoutX="180.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../img/login-200.png" />
+                        <Image url="@../login-200.png" />
                      </image>
                   </ImageView>
                   <JFXTextField fx:id="usr" focusColor="#06ee40" labelFloat="true" layoutX="115.0" layoutY="216.0" prefHeight="45.0" prefWidth="315.0" promptText="enter your username" unFocusColor="#0be407">
@@ -61,7 +61,7 @@
                   </StackPane>
                   <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="73.0" layoutY="229.0">
                      <image>
-                        <Image url="@../../img/user.png" />
+                        <Image url="@../user.png" />
                      </image>
                   </ImageView>
                </children>
@@ -89,16 +89,16 @@
                   </JFXPasswordField>
                   <ImageView fx:id="image" fitHeight="162.0" fitWidth="260.0" layoutX="156.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../img/signup.png" />
+                        <Image url="@../signup.png" />
                      </image></ImageView>
                   <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="87.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../img/user.png" />
+                        <Image url="@../user.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="87.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../img/key.png" />
+                        <Image url="@../key.png" />
                      </image>
                   </ImageView>
                   <JFXButton fx:id="btn_img" layoutX="217.0" layoutY="200.0" onAction="#chooseFile" prefHeight="44.0" prefWidth="110.0" text="Choose Pic" textFill="#22e10c">

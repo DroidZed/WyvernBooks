@@ -129,6 +129,8 @@ public class MainController {
 		stage.setScene(new Scene(root1));
 		stage.getIcons().add(new Image("icon.png"));
 		stage.setResizable(false);
+		stage.setHeight(520);
+		stage.setWidth(700);
 		stage.show();
 		
 	}
